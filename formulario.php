@@ -9,11 +9,11 @@
 
         if ($_idade >= 18) {
             echo "Seu nome: $_txtnome, $_sexo, $_endereco";
-            echo "Você é maior de idade";
+            echo "<br>Você é maior de idade";
         }else{
-            echo "Seu nome: $_txtnome, $_sexo, $_endereco";
+            echo "Seu nome: $_txtnome";
             
-            echo "Você é menor de idade";
+            echo "<br>Você é menor de idade";
         }
         
         ?>
