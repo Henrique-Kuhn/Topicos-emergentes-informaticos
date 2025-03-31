@@ -18,8 +18,7 @@
         Digite sua idade:
         <input type="number" size="80" name="idade"><br><br>
         Diga seu gênero:
-        <input type="radio" name ="sexo" size ="80" value="Masculino">Masculino 
-        <input type="radio" name ="sexo" size ="80" value="Feminino">Feminino<br><br>
+        <input type="text" size="80" name="sexo"><br><br>
         Digite seu endereço:
         <input type="text" size="80" name="endereco"><br><br>
 
