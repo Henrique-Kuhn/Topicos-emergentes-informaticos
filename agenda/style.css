@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+    background-color: gray;
+}
+.input{
+    border-radius: 8px;
+    color: black;
+    border: solid 2px;
+    height: 50px;
+    font-size: 30px;
+}
+input::placeholder{
+    color: black;
+}
+.btn{
+    border-radius: 8px;
+    border: 2px solid;
+    width: 200px;
+    height: 30px;
+    left: 875px;
+    position: absolute;
+}
