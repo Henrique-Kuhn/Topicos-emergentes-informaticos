@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>EXEMPLO - AGENDA</h1>
-    <form action="salva.php" method="post">
+    <form action="index.php" method="post">
      Nome: <input type="text" id="nome" placeholder="Digite seu nome" class="input" name="nome" >
     <br><br>
      Telefone: <input type="text" id="tel" placeholder="Digite seu telefone" class="input" name="tel" >
@@ -17,36 +17,23 @@
      <br><br> 
      <input type="submit" value="Cadastrar" class="btn"><br><br>
     </form>
+    <a href='editar.php? id=".$linha["id"].'>editar</a><br>
 </body>
-<?php
+<?php         
 
-            $servidor = "localhost";
-            $user = "root";
-            $senha = "";
-            $banco = "agenda";
-            $conexao = mysqli_connect($servidor,$user,$senha,$banco);
-            if(!$conexao){
-                    echo "ERRO DE CONEXÃO";
-
-            }
-            else{
-                echo "<h1>TUDO CERTO</h1>";
-            }
-
-           
+            include "conexao.php";
+            //include "salva.php";
+            $sqli = "select * from contatos";
+            $res = mysqli_query($conexao,$sqli);
+            if(mysqli_num_rows($res)>0){
+                while($linha= mysqli_fetch_assoc($res)){
+                    echo "<br>". $linha['nome']."<br>".$linha['endereco']."<br>".$linha['telefone'];
+                }
+        
+            }else{
+                echo "Nenhum contato encontrado";
+            }  
+            
 ?>
-<?php
 
-
-    $sqli = "select * from contatos";
-    $res = mysqli_query($conexao,$sqli);
-    if(mysqli_num_rows($res)>0){
-        while($linha= mysqli_fetch_assoc($res)){
-            echo "<br>". $linha['nome']."<br>".$linha['endereco']."<br>".$linha['telefone'];
-        }
-
-    }else{
-        echo "Nenhum contato encontrado";
-    }
-?>
     </html>
