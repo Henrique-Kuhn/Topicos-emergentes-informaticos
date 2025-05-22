@@ -28,11 +28,47 @@ if(isset($_POST['Excluir'])) {
     }
 }
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .formulario{
+        width: 450px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .formulario input[type="text"]{
+        width: 95%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .formulario input[type="submit"]{
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .formulario input[type="submit"]:hover{
+        background-color: #45a049;
+    }
+</style>
 <body>
-    <h2>Excluindo Contato</h2>
+
+    
+    <form method="post" class="formulario">
+    <h2>EXCLUIR CONTATO</h2>
     <p>Tem certeza de que deseja excluir o contato <strong><?php echo "<br>Nome: ".$contato['nome']."<br> Endereço: ", $contato['endereco']."<br> Telefone: ", $contato['telefone']. "<br>"; ?></strong>?</p>
-    <form method="post">
         <input type="hidden" name="id" value="<?php echo $contato['id']; ?>">
         <input type="submit" name="Excluir" value="Excluir">
         <a href="index.php">Cancelar</a>

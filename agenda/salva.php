@@ -14,3 +14,4 @@ if (mysqli_query($conexao, $sql)) {
 } else {
     echo "Erro ao salvar: " . mysqli_error($conexao);
 }
+?>
